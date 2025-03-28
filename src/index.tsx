@@ -1,15 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './css/input.css'
+import Navbar from './components/navbar/Navbar';
+import MenuInferior from './components/bottomMenu/BottomMenu';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <div className='w-full h-auto min-h-screen font-exo'>
+    <Navbar currentLocal='Local N° 147' role='Administrador' otherAssignedLocals={[]}/>
+      <App />
+      <MenuInferior/>
+    </div>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
